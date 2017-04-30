@@ -1,3 +1,10 @@
 insert into hero (id, name) values (-1, 'Superman');
 insert into hero (id, name) values (-2, 'Batman');
 insert into hero (id, name) values (-3, 'Calico');
+insert into hero (id, name) values (-4, 'Magneto');
+insert into hero (id, name) values (-5, 'Xavier');
+insert into hero (id, name) values (-6, 'Flash');
+insert into hero (id, name) values (-7, 'Catwoman');
+insert into hero (id, name) values (-8, 'Thor');
+insert into hero (id, name) values (-9, 'Tormenta');
+insert into hero (id, name) values (-10, 'Dracula');
