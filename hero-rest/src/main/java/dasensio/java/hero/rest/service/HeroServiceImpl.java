@@ -28,26 +28,27 @@ public class HeroServiceImpl implements HeroService {
 
 	@Override
 	public void deleteHeroe(final Hero hero) {
-		// TODO Auto-generated method stub
-
+		heroRepository.delete(hero);
 	}
 
 	@Override
 	public void deleteHeroe(final Long id) {
-		// TODO Auto-generated method stub
-
+		heroRepository.delete(id);
 	}
 
 	@Override
 	public Hero updateHero(final Hero hero) {
-		// TODO Auto-generated method stub
-		return null;
+		return heroRepository.save(hero);
 	}
 
 	@Override
 	public Hero insertHero(final Hero hero) {
-		// TODO Auto-generated method stub
-		return null;
+		return heroRepository.save(hero);
+	}
+
+	@Override
+	public List<Hero> searchHeroes(final String name) {
+		return heroRepository.findByNameContainingIgnoreCase(name);
 	}
 
 }

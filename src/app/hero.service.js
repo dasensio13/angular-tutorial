@@ -14,14 +14,14 @@ require("rxjs/add/operator/toPromise");
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
-        this.heroesUrl = 'api/heroes';
+        this.heroesUrl = 'http://localhost:8080/hero';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     ;
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     HeroService.prototype.handleError = function (error) {
@@ -32,7 +32,7 @@ var HeroService = (function () {
         var url = this.heroesUrl + "/" + id;
         return this.http.get(url)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     HeroService.prototype.update = function (hero) {
@@ -47,7 +47,7 @@ var HeroService = (function () {
         return this.http
             .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
+            .then(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     HeroService.prototype.delete = function (id) {

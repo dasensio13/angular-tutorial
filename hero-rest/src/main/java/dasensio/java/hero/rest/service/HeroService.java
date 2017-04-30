@@ -11,6 +11,8 @@ public interface HeroService extends Serializable {
 
 	public List<Hero> getHeroes();
 
+	public List<Hero> searchHeroes(String name);
+
 	public void deleteHeroe(Hero hero);
 
 	public void deleteHeroe(Long id);

@@ -14,11 +14,12 @@ require("rxjs/add/operator/map");
 var HeroSearchService = (function () {
     function HeroSearchService(http) {
         this.http = http;
+        this.heroesUrl = 'http://localhost:8080/hero/search';
     }
     HeroSearchService.prototype.search = function (term) {
         return this.http
-            .get("app/heroes/?name=" + term)
-            .map(function (response) { return response.json().data; });
+            .get(this.heroesUrl + "?name=" + term)
+            .map(function (response) { return response.json(); });
     };
     return HeroSearchService;
 }());
